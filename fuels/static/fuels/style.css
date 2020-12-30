@@ -1,0 +1,41 @@
+.top {
+    margin-top: 50px;
+}
+
+::shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+}
+
+
+.headercolour {
+    color: #34D730 ;
+    font-size: 25px;
+}
+
+.btn-outline-success {
+    color: #34D730 ;
+    border-color: #34D730 ;
+    width: 100px;
+}
+
+.btn{
+    position: relative;
+    top: 0;
+    transition: top ease 0.5s;
+}
+
+.btn:hover {
+    top: -5px;
+    color: #34D730 ;
+    border-color: #34D730 ;
+    background-color: white;
+  }
+
+.btn:focus, button.selected{
+    background-color:  #34D730 ;
+    border-color: #34D730;
+    outline: none;
+    color: white;
+}
+
