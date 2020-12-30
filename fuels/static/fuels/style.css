@@ -9,8 +9,23 @@
 
 
 .headercolour {
-    color: #34D730 ;
     font-size: 25px;
+}
+
+.euro {
+    font-size: 25px;
+    color: #ABACAB;
+}
+.euro-text {
+    font-size: 45px;
+    text-align: center;
+}
+
+.good {
+    color: #34D730;   
+}
+.bad {
+    color: #E32929  ;
 }
 
 .btn-outline-success {

@@ -30,8 +30,8 @@
         <div class="col-sm">
           <div class="card border-light mb-3 shadow" style="width: 25rem;">
             <div class="card-body">
-              <h5 class="card-title headercolour">Benzine</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title headercolour good">Benzine</h5>
+              <p class="euro-text good"><span class="euro">€</span> 1,60</p>
               <p class="text-muted">26/12/2020</p>
             </div>
           </div>
@@ -39,8 +39,8 @@
         <div class="col-sm">
           <div class="card border-light mb-3 shadow" style="width: 25rem;">
             <div class="card-body">
-              <h5 class="card-title headercolour">Diesel</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title headercolour bad">Diesel</h5>
+              <p class="euro-text bad"><span class="euro">€</span> 1,35</p>
               <p class="text-muted">26/12/2020</p>
             </div>
           </div>
@@ -48,8 +48,8 @@
         <div class="col-sm">
           <div class="card border-light mb-3 shadow" style="width: 25rem;">
             <div class="card-body">
-              <h5 class="card-title headercolour">LPG</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title headercolour good">LPG</h5>
+              <p class="euro-text good"><span class="euro">€</span> 0,90</p>
               <p class="text-muted">26/12/2020</p>
             </div>
           </div>
@@ -91,28 +91,40 @@
 
     <script>
 
+      var forecast_chart  = null;
+
       function getchart(btn) {
+
+      
       var buttonValue = btn.value;
       var ctx = document.getElementById('myChart').getContext('2d');
-      var chart = new Chart(ctx, {
+      var config = {
       // The type of chart we want to create
       type: 'line',
 
       // The data for our dataset
       data: {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
           datasets: [{
               label: String(buttonValue),
               backgroundColor: 'rgb(52, 215, 48)',
               borderColor: 'rgb(52, 215, 48)',
-              data: [0, 10, 5, 2, 20, 30, 45]
+              data: [0, 10, 5, 2, 20, 30, 45, 50, 55, 60, 70, 75]
           }]
       },
 
       // Configuration options go here
       options: {}
-    });
-    
+    };
+
+    if(forecast_chart != null) // i initialize myBarChart var with null
+    {
+    forecast_chart.destroy(); // if not null call destroy
+    forecast_chart = new Chart(ctx, config); 
+    } else {
+    forecast_chart = new Chart(ctx, config); 
+    }
+
     }
       
     </script>
